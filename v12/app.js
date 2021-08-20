@@ -13,17 +13,6 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
-/*전체 특정명령어 선언문
-const prefix = process.env.PREFIX;
-*/
-/* 특정명령어 부분 추후안내 예정
-client.on("message", message => {
-  let prefix = ".";
-  if(message.author.bot || !message.guild) return;
-  if(!message.content.startsWith(prefix)) return;
-*/
-/*서버가 정상적으로 작동할떄 뜨는 text */
-
 client.on('ready', () => {
 
   console.log('-----------------');
@@ -56,22 +45,18 @@ client.on('ready', () => {
 
   client.on("message", message => {
     if (message.content == "help") {
-         const exampleEmbed = new Discord.MessageEmbed()
+         const helpMassage = new Discord.MessageEmbed()
          .setColor(' #fef01b ')
          .setTitle('명령어 목록')	     	     
          .setDescription('봇의 명령어를 알려 드립니다.')
-         .addField('차트',  `멜론차트 10위까지 보여 드립니다 *따로따로 하나씩 나옴.`, true)
-         .addField('운세',  `말띠의 운세를 알려 드립니다.`, true)
-         //.addField('!선권, !선권아, !이선권',  `선권이가 답변을 해드려요!.`, true)
+         .addField('차트',  `멜론차트 10위까지 보여 드립니다 *따로따로 하나씩 나옴.`)
+         .addField('운세',  `말띠의 운세를 알려 드립니다.`)
          .addField('날씨 "지역입력"', `입력한 지역의 날씨를 알려드립니다. ex(날씨 서울)`)
+         .addField('식단정보, 내식', `기숙사 식단을 알려주고 내식은 내일 기숙사 식단을 알려줌니다.`)
          .addField('학식(Beta)"', `창의관 또는 수덕전 오늘의 학식을 알려줌니다`)
          .setTimestamp()
         
-         message.channel.send(exampleEmbed);
-         /* 개인메세지 보낼떄
-         message.channel.send("따로 개인메세지로 보냈습니다.");
-         client.users.get(`${message.author.id}`).send(exampleEmbed)
-         */
+         message.channel.send(helpMassage);
     }
   });
 
@@ -85,22 +70,12 @@ client.on('ready', () => {
 
 
   client.on("message", message => {
-    var prefix = "" //자신이 원하는 접두사를 정해주세요!
+    var prefix = "" 
     if (message.content.indexOf(prefix) !== 0) return;
    
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-    //모듈을 추가하고 싶으면 commands에 자신이 원하는 모듈파일을 넣고
-    //
-    //  case '명령어 이름 이건 파일이름을 따르지 않아도 됨니다!' {
-    //	client.commands.get('파일 이름(파일형식은 저거)').execute(message, args);
-    //  breack;
-    //
-    //이걸 넣어서 추가해 주세요!
     switch (command){
-        //case "차트" :
-           // client.commands.get('chart').execute(message, args);
-            //break;
         case "날씨" :
             client.commands.get('weather').execute(message, args);
             break;
@@ -123,17 +98,6 @@ client.on('ready', () => {
               client.commands.get('schoolfood').execute(message, args);
             break;     
     };
-
-    //switch문에서 안되면 여기에 넣어서 한번 시도해보세요
-    //
-    //  else if(command === '명령어 이름 이건 파일이름을 따르지 않아도 됨니다!') {
-    //	client.commands.get('파일 이름(파일형식은 저거)').execute(message, args);
-    //  }
-    //
-    //이걸 넣어서 추가해 주세요!
-    //if(command === '!선권', '!선권아', '!이선권') {
-    //  client.commands.get('Conch in magic').execute(message, args);
-    // }
    });  	
 
 
