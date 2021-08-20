@@ -5,10 +5,10 @@ module.exports = {
 
         const fs = require('fs');
 
-        const jsonFile = fs.readFileSync('/home/leehojun/바탕화면/lee/paser/happy.json', 'utf8');
+        const jsonFile = fs.readFileSync('/home/inmd/lee/paser/happy.json', 'utf8');
         const data = JSON.parse(jsonFile);
  
-        const jsonFile1 = fs.readFileSync('/home/leehojun/바탕화면/lee/paser/hyomin.json', 'utf8');
+        const jsonFile1 = fs.readFileSync('/home/inmd/lee/paser/hyomin.json', 'utf8');
         const data1 = JSON.parse(jsonFile1);
 
         let today = new Date();   
@@ -21,13 +21,9 @@ module.exports = {
            .addField('경고!"', `토요일 일요일은 제공하지 않습니다.`)
            .setTimestamp()
              
-            message
-            .channel
-            .send(h);
-          }else{
-
-        const happy = new Discord
-            .MessageEmbed()
+            message.channel.send(h);
+        }else{
+        const happy = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle("내일 행복기숙사 식사 정보")
             .addField('아침 일품', data[day].Breakfast_s, true)
@@ -37,24 +33,19 @@ module.exports = {
             .addField('저녁 일품', data[day].dinner_s, true)
             .setTimestamp()
 
-        const hyomin = new Discord
-            .MessageEmbed()
+        message.channel.send(happy);
+
+        /*
+        const hyomin = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle("내일 효민기숙사 식사 정보 ")
             .addField('아침', data1[day].hBreakfast, true)
             .addField('점심', data1[day].hlunch, true)
             .addField('저녁', data1[day].hdinner, true)
             .setTimestamp()
-
-
-        message
-            .channel
-            .send(happy);
-
-        message
-            .channel
-            .send(hyomin);
-}
-
+            
+        message.channel.send(hyomin);
+        */
     }
+}
 };

@@ -5,10 +5,10 @@ module.exports = {
 
         const fs = require('fs');
 
-        const jsonFile = fs.readFileSync('/home/leehojun/바탕화면/lee/paser/happy.json', 'utf8');
+        const jsonFile = fs.readFileSync('/home/inmd/lee/paser/happy.json', 'utf8');
         const data = JSON.parse(jsonFile);
  
-        const jsonFile1 = fs.readFileSync('/home/leehojun/바탕화면/lee/paser/hyomin.json', 'utf8');
+        const jsonFile1 = fs.readFileSync('/home/inmd/lee/paser/hyomin.json', 'utf8');
         const data1 = JSON.parse(jsonFile1);
 
         let today = new Date();   
@@ -26,35 +26,28 @@ module.exports = {
             .send(h);
           }else{
 
-        const happy = new Discord
-            .MessageEmbed()
+            const happy = new Discord.MessageEmbed()
             .setColor('#0099ff')
-            .setTitle("행복기숙사 식사 정보 " )
-            .addField('아침', data[day].Breakfast, true)
+            .setTitle("내일 행복기숙사 식사 정보")
             .addField('아침 일품', data[day].Breakfast_s, true)
             .addField('점심', data[day].lunch, true)
             .addField('점심 일품', data[day].lunch_s, true)
             .addField('저녁', data[day].dinner, true)
             .addField('저녁 일품', data[day].dinner_s, true)
             .setTimestamp()
+            message.channel.send(happy);
 
-        const hyomin = new Discord
-            .MessageEmbed()
+        /*
+        const hyomin = new Discord.MessageEmbed()
             .setColor('#0099ff')
-            .setTitle("효민기숙사 식사 정보 " +  data1[day].day )
+            .setTitle("내일 효민기숙사 식사 정보 ")
             .addField('아침', data1[day].hBreakfast, true)
             .addField('점심', data1[day].hlunch, true)
             .addField('저녁', data1[day].hdinner, true)
             .setTimestamp()
-
-
-        message
-            .channel
-            .send(happy);
-
-        message
-            .channel
-            .send(hyomin);
+            
+        message.channel.send(hyomin);
+        */
 }
 
     }

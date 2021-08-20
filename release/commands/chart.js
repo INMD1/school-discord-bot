@@ -66,7 +66,7 @@ module.exports = {
 				  newtime = "오전 " +up_time_arr[0];
 				}
 			 
-				const exampleEmbed = new Discord.MessageEmbed()
+				const send = new Discord.MessageEmbed()
 				.setColor(' #66FF33 ')
 				.setTitle('멜론 top10')	     	     
 				.setDescription("("+up_date_arr[0]+"년 "+up_date_arr[1]+"월 "+up_date_arr[2]+"일 "+newtime+"시에 업데이트됨)")
@@ -81,7 +81,7 @@ module.exports = {
 				.addField('9위', title[8] + " - " + artist[8])
 				.addField('10위',title[9] + " - " + artist[9])
 			   
-				message.channel.send(exampleEmbed);
+				message.channel.send(send);
 				/*
 				// 콘솔창 출력
 		

@@ -110,9 +110,6 @@ client.on('ready', () => {
         case "별자리" :
             client.commands.get('star').execute(message, args);
             break;
-        case "무야호" :
-              client.commands.get('image1').execute(message, args);
-            break;
         case "식단정보" :
              client.commands.get('food').execute(message, args);
             break;
