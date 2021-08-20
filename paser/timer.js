@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 data();
+
 const schedule = require('node-schedule');
 const rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(1)];
@@ -17,8 +18,9 @@ const k = schedule.scheduleJob(rule, () => {
 
 function data() {
     (async () => {
-        const browser = await puppeteer.launch({headless: false});
-        const page = await browser.newPage();
+        const browser = await puppeteer.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+          });        const page = await browser.newPage();
         await page.setViewport({width: 1920, height: 1080});
 
         let data = [] ;

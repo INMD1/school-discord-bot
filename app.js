@@ -64,7 +64,7 @@ client.on('ready', () => {
          .addField('운세',  `말띠의 운세를 알려 드립니다.`, true)
          //.addField('!선권, !선권아, !이선권',  `선권이가 답변을 해드려요!.`, true)
          .addField('날씨 "지역입력"', `입력한 지역의 날씨를 알려드립니다. ex(날씨 서울)`)
-         .addField('배그동접자"', `현재 배그 동접자수를 보여줌니다.`)
+         .addField('학식(Beta)"', `창의관 또는 수덕전 오늘의 학식을 알려줌니다`)
          .setTimestamp()
         
          message.channel.send(exampleEmbed);
@@ -82,15 +82,6 @@ client.on('ready', () => {
     
     }
   });
-
-  client.on('message', message => {
-    if (message.content === '프샤') {
-      let embed = new Discord.MessageEmbed()
-    .setImage(message.author.avatarURL)
-    .setColor('#275BF0')
-      message.channel.send(embed)
-    }
-});
 
 
   client.on("message", message => {
@@ -110,26 +101,14 @@ client.on('ready', () => {
         //case "차트" :
            // client.commands.get('chart').execute(message, args);
             //break;
-        case "프샤" :
-            client.commands.get('image').execute(message, args);
-            break;
         case "날씨" :
             client.commands.get('weather').execute(message, args);
-            break;
-        case "배그동접자" :
-            client.commands.get('pubg').execute(message, args);
             break;
         case "운세" :
             client.commands.get('luck').execute(message, args);
             break;
         case "별자리" :
             client.commands.get('star').execute(message, args);
-            break;
-        case "서버정보" :
-            client.commands.get('ver').execute(message, args);
-            break;
-        case "로또" :
-            client.commands.get('lotto').execute(message, args);
             break;
         case "무야호" :
               client.commands.get('image1').execute(message, args);
