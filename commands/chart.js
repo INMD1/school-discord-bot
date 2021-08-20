@@ -1,6 +1,7 @@
 module.exports = {	
 	name: 'chart',
-	execute(message) {        
+	execute(message) { 
+		const Discord = require('discord.js');       
 			var cheerio = require('cheerio');
 			var request = require('request');
 			 
@@ -65,6 +66,23 @@ module.exports = {
 				  newtime = "오전 " +up_time_arr[0];
 				}
 			 
+				const exampleEmbed = new Discord.MessageEmbed()
+				.setColor(' #66FF33 ')
+				.setTitle('멜론 top10')	     	     
+				.setDescription("("+up_date_arr[0]+"년 "+up_date_arr[1]+"월 "+up_date_arr[2]+"일 "+newtime+"시에 업데이트됨)")
+				.addField('1위', title[0] + " - " + artist[0])
+				.addField('2위', title[1] + " - " + artist[1])
+				.addField('3위', title[2] + " - " + artist[2])
+				.addField('4의', title[3] + " - " + artist[3])
+				.addField('5위', title[4] + " - " + artist[4])
+				.addField('6위', title[5] + " - " + artist[5])
+				.addField('7위', title[6] + " - " + artist[6])
+				.addField('8위', title[7] + " - " + artist[7])
+				.addField('9위', title[8] + " - " + artist[8])
+				.addField('10위',title[9] + " - " + artist[9])
+			   
+				message.channel.send(exampleEmbed);
+				/*
 				// 콘솔창 출력
 		
 				message.channel.send("< 멜론 차트 1 ~ "+rank+"위 >");
@@ -75,6 +93,7 @@ module.exports = {
 				}
 				// 업데이트 시간
 				message.channel.send("("+up_date_arr[0]+"년 "+up_date_arr[1]+"월 "+up_date_arr[2]+"일 "+newtime+"시에 업데이트됨)");
+				*/
 			  }
 			});			  
 	},

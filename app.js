@@ -140,6 +140,9 @@ client.on('ready', () => {
         case "내식" :
               client.commands.get('food_t').execute(message, args);
             break;
+        case "차트" :
+              client.commands.get('chart').execute(message, args);
+            break;    
     };
 
     //switch문에서 안되면 여기에 넣어서 한번 시도해보세요
