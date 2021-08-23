@@ -7,7 +7,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('차트')
 		.setDescription('멜론 뮤직 차트를 알려줌니다.'),
-	execute(interaction) {
+		 execute(interaction) {
 		var cheerio = require('cheerio');
 		var request = require('request');
 
@@ -85,7 +85,7 @@ module.exports = {
 					.addField('8위', title[7] + " - " + artist[7])
 					.addField('9위', title[8] + " - " + artist[8])
 					.addField('10위', title[9] + " - " + artist[9])
-				interaction.reply({embeds: [send]});
+				 interaction.reply({embeds: [send]});
 			}
 		});
 	},
