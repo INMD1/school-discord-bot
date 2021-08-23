@@ -6,7 +6,7 @@
 ## 설정파일 설정
 config.json에 들어가면 
 
-```
+```json
 {
 "token" : ""
 }
@@ -15,7 +15,7 @@ config.json에 들어가면
 
 ## 봇의 기능을 추가하는 방법
 첫번째로 폴더에 들어거면 `commands` 라는 파일이 보임니다.
-```
+```js
 commands
     ㄴ chart.js
     ㄴ Conch in magic.js
@@ -28,7 +28,7 @@ commands
 
 ```
 여기서 `Template.js`에 들어가 줌니다.
-```
+```js
 module.exports = {	
 	name: '', // 파일이름을 적어주세요.
 	execute(message) {        
@@ -42,7 +42,7 @@ module.exports = {
 
 이제 `app.js`에 들어가 줘서 이코드를 확인해 주세요.
 
-```
+```js
   client.on("message", message => {
     var prefix = "" //자신이 원하는 접두사를 정해주세요!
     if (message.content.indexOf(prefix) !== 0) return;
@@ -82,7 +82,7 @@ module.exports = {
 
 swich문에서 모듈을 추가하는 방법은
 
-```
+```js
         case '명령어 이름 이건 파일이름을 따르지 않아도 됨니다!' {
        	client.commands.get('파일 이름(파일형식은 저거)').execute(message, args);
         breack;
@@ -91,7 +91,7 @@ swich문에서 모듈을 추가하는 방법은
 
 if문에서 모듈을 추가하는 방법은
 
-```
+```js
         else if(command === '명령어 이름 이건 파일이름을 따르지 않아도 됨니다!') {
         client.commands.get('파일 이름(파일형식은 저거)').execute(message, args);
         }
