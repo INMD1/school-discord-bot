@@ -107,6 +107,6 @@ if문에서 모듈을 추가하는 방법은
 모든기능을 모듈화로 변경 했습니다.
 
 # 기타봇문의
-이메일:lyw514549@gmail.com
+이메일: lyw514549@office.deu.ac.kr
 디스코드:https://discord.gg/XVWmPcT
 # school-discord-bot
