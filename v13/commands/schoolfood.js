@@ -15,7 +15,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('schoolfood')
+		.setName('학식')
 		.setDescription('수덕전 또는 정보공학관 식단을 보여줌니다!'),
 	async execute(interaction) {
         request(Sudeokjeon,  function(err,res ,body) {
