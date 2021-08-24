@@ -1,8 +1,9 @@
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
-const { token } = require('./config.json');
-
+const { token, admin } = require('./jsonfile/config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+
 client.commands = new Collection();
 
 const publicfile = fs.readdirSync('./public').filter(file => file.endsWith('.js'));
@@ -41,4 +42,9 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+
+
 client.login(token);
+
+
+
