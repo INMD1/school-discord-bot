@@ -5,14 +5,24 @@ const { token } = require('./config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.commands = new Collection();
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const publicfile = fs.readdirSync('./public').filter(file => file.endsWith('.js'));
+const Secretsfile = fs.readdirSync('./Secret').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
+// 서버에서 사용할 명령어 준비
+for (const file of publicfile) {
+	const command = require(`./public/${file}`);
+	client.commands.set(command.data.name, command);
+	
+}
+
+// DM에서 사용할 명렁어 파일 준비
+for (const file of Secretsfile) {
+	const command = require(`./Secret/${file}`);
 	client.commands.set(command.data.name, command);
 }
 
 client.once('ready', () => {
+	client.user.setActivity("v13 업데이트! /를 입력해주세요.")
 	console.log('Ready!');
 });
 
@@ -20,7 +30,7 @@ client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
 	const command = client.commands.get(interaction.commandName);
-
+	interaction.options.ge
 	if (!command) return;
 
 	try {
