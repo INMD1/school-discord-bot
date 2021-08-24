@@ -28,7 +28,7 @@ module.exports = {
             const id = data[`${user.id}`].id;
             const name = data[`${user.id}`].name;
             const body = data[`${user.id}`].body;
-            console.log(id + name + body);
+            console.log("잔류 신청"+id + name);
 			const browser = await puppeteer.launch({
 				headless: false
 			  }); 
