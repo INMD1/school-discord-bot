@@ -1,14 +1,13 @@
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { token} = require('../jsonfile/config.json');
+const {token, clientId} = require('../jsonfile/config.json');
 const fs = require('fs');
 
 const Secretss = [];
 const Secrets = fs.readdirSync('../Secret').filter(file => file.endsWith('.js'));
 
 // Place your client and guild ids here
-const clientId = '826082134766780426';
-const guildId = '820326481074716725';
+
 
 for (const file of Secrets) {
 	//비공개 명령어

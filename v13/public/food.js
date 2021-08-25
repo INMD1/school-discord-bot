@@ -43,7 +43,6 @@ module.exports = {
             .setTimestamp()
             interaction.reply({embeds: [happy]});         
          }
-		await interaction.reply('Pong!');
 	},
 
 };
