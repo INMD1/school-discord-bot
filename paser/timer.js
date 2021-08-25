@@ -37,22 +37,40 @@ function data() {
         data1 = (await getAll1(page));
         
         console.log(data1);
-
+        /*
+        //v12
         const fs = require("fs");
         fs.writeFile(
-            "./happy.json",
+            "../v12/paserfile/happy.json",
             JSON.stringify(data, null, 2),
             err => err
                 ? console.error("!!Failed writing file", err)
                 : console.log("데이터 수집이 끝났습니다. 행복기숙사\n\n")
         );
         fs.writeFile(
-            "./hyomin.json",
+            "../v12/paserfile/happy.json",
             JSON.stringify(data1, null, 2),
             err => err
                 ? console.error("!!Failed writing file", err)
                 : console.log("데이터 수집이 끝났습니다. 효민기숙사\n\n")
         );
+        */
+       //v13
+       const fs = require("fs");
+       fs.writeFile(
+           "../v13/paserfile/happy.json",
+           JSON.stringify(data, null, 2),
+           err => err
+               ? console.error("!!Failed writing file", err)
+               : console.log("데이터 수집이 끝났습니다. 행복기숙사\n\n")
+       );
+       fs.writeFile(
+           '../v13/paserfile/hyomin.json',
+           JSON.stringify(data1, null, 2),
+           err => err
+               ? console.error("!!Failed writing file", err)
+               : console.log("데이터 수집이 끝났습니다. 효민기숙사\n\n")
+       );
 
         await browser.close();
     })();

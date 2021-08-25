@@ -1,12 +1,12 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const Discord = require("discord.js"); //안쓸떄는 지워도 되요 근데 오류나면 지우세요.
-
+const path = require('path');
 const fs = require('fs');
 
-const jsonFile = fs.readFileSync('/home/inmd/lee/paser/happy.json', 'utf8');
+const jsonFile = fs.readFileSync(path.join(__dirname, '../paserfile/happy.json'));
 const data = JSON.parse(jsonFile);
 
-const jsonFile1 = fs.readFileSync('/home/inmd/lee/paser/hyomin.json', 'utf8');
+const jsonFile1 =fs.readFileSync(path.join(__dirname, '../paserfile/hyomin.json'));
 const data1 = JSON.parse(jsonFile1);
 
 

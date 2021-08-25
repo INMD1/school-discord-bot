@@ -1,10 +1,10 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageAttachment } = require('discord.js');
 const { MessageActionRow, MessageButton } = require('discord.js');
-
+const path = require('path');
 // 개인정보 저장및불려오기
 const fs = require('fs');
-const jsonFile = fs.readFileSync('/home/inmd/lee/v13/jsonfile/scret.json', 'utf8');
+const jsonFile = fs.readFileSync(path.join(__dirname,'../jsonfile/scret.json'), 'utf8');
 const data = JSON.parse(jsonFile);
 
 // 백그라운드 브라우저 매크로 라이브러리
