@@ -7,9 +7,8 @@ const Secretss = [];
 const Secrets = fs.readdirSync('../Secret').filter(file => file.endsWith('.js'));
 
 // Place your client and guild ids here
-const clientId = '576408873867673630';
-const guildId = '557221073637081099';
-
+const clientId = '826082134766780426';
+const guildId = '820326481074716725';
 
 for (const file of Secrets) {
 	//비공개 명령어

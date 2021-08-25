@@ -3,16 +3,16 @@ const Discord = require("discord.js"); //안쓸떄는 지워도 되요 근데 �
 
 const fs = require('fs');
 
-const jsonFile = fs.readFileSync('C:/Users/lyw51/OneDrive/문서/github/school-discord-bot/paser/happy.json', 'utf8');
+const jsonFile = fs.readFileSync('/home/inmd/lee/paser/happy.json', 'utf8');
 const data = JSON.parse(jsonFile);
 
-const jsonFile1 = fs.readFileSync('C:/Users/lyw51/OneDrive/문서/github/school-discord-bot/paser/hyomin.json', 'utf8');
+const jsonFile1 = fs.readFileSync('/home/inmd/lee/paser/hyomin.json', 'utf8');
 const data1 = JSON.parse(jsonFile1);
 
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('tfood')
+		.setName('내식')
 		.setDescription('내일 기숙사 식단을 보내드림니다.'),
 	async execute(interaction) {
         let today = new Date();   
