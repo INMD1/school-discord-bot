@@ -7,7 +7,6 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.commands = new Collection();
 
 const publicfile = fs.readdirSync('./public').filter(file => file.endsWith('.js'));
-const Secretsfile = fs.readdirSync('./Secret').filter(file => file.endsWith('.js'));
 
 // 서버에서 사용할 명령어 준비
 for (const file of publicfile) {
@@ -16,11 +15,6 @@ for (const file of publicfile) {
 	
 }
 
-// DM에서 사용할 명렁어 파일 준비
-for (const file of Secretsfile) {
-	const command = require(`./Secret/${file}`);
-	client.commands.set(command.data.name, command);
-}
 
 client.once('ready', () => {
 	client.user.setActivity("v13 업데이트! /를 입력해주세요.")
