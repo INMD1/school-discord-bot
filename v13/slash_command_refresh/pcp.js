@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 }
 
 
-;const rest = new REST({ version: '9' }).setToken(token);
+const rest = new REST({ version: '9' }).setToken(token);
 
 (async () => {
 	try {
@@ -32,4 +32,4 @@ for (const file of commandFiles) {
 	}
 
 	
-})()
+})();

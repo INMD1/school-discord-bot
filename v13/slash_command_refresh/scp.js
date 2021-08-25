@@ -1,6 +1,6 @@
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const {token, clientId, guildId} = require('../jsonfile/config.json');
+const {token, clientId } = require('../jsonfile/config.json');
 const fs = require('fs');
 
 const Secretss = [];
@@ -29,7 +29,7 @@ const rest = new REST({ version: '9' }).setToken(token);
 		console.log('Started refreshing application (/) Secret commands.');
 
 		await rest.put(
-			Routes.applicationGuildCommands(clientId, guildId),
+			Routes.applicationCommands(clientId),
 			{ body: publics },
 		);
 
