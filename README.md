@@ -5,10 +5,6 @@
 
 ⚠ 리드미 작성중입니다.
 
-## 기능
-위키참조 
-https://github.com/INMD1/school-discord-bot/wiki
-
 ## V12
 V12는 `discord.js@12.5.3`기반으로 제작된 봇입니다.<br>
 -> 하지만 v13으로 바뀌면서 기반을 살짝 변경중이니 오류가 나면 [issues]("https://github.com/INMD1/school-discord-bot/issues")로 제보 해주시기 바람니다.
