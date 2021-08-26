@@ -1,64 +1,86 @@
-# 사용법
-이래에 있는 걸 설치해 주세요.
-```
-node.js
+# 동의대 1학년 창소 디코방 서버 봇
+![image](https://cdn.discordapp.com/avatars/826082134766780426/8ed343a5eddafc07a68eb7621089573a.png)<br><br>
+이봇은 저희 창소디코방에서 쓰이는 봇입니다.<br>
+(봇 이미지입니다...)
 
-node.js 라이브러리
- 
+⚠ 리드미 작성중입니다.
+## 기능
+위키참조 
+https://github.com/INMD1/school-discord-bot/wiki
+
+## V12
+V12는 `discord.js@12.5.3`기반으로 제작된 봇입니다.<br>
+-> 하지만 v13으로 바뀌면서 기반을 살짝 변경중이니 오류가 나면 [issues]("https://github.com/INMD1/school-discord-bot/issues")로 제보 해주시기 바람니다.
+
+## V13
+V13는 `discord.js@13.1.0`기반으로 제작된 봇입니다.<br><br>
+
+# 봇 사용법
+
+## node.js && 라이브러리 설치
+
+### v12
+```
+node.js(아무버전이나 상관없습);
+
+*라이브러리
+discord.js
+os
+moment
+moment-timezone
+cheerio
+request
+weather-js
+node-schedule
+```
+
+### v13
+```
+node.js(최신버전);
+
+*라이브러리
+os
+discord.js
+moment
+moment-timezone
+cheerio
+request
+weather-js
 puppeteer
 node-schedule
-moment
-moment-timezone
 ```
-그리고 `node timer`를 입력을 해주시고 실행하시면 자동으로 정보를 가지고 와서 저장을 합니다.
+## 설정파일 설정
 
-그려면 hyomin.json이랑 happy.json에 데이터가 저장이 됨니다.
-
-```
-이번에 따로 반복할 파일 그리고 반복하지 파일을 따로 분리를 해놓았습니다.
-반복문 O
-
-timer_week.js
-
-반복문 X
-
-timer.js
-
-*반복을 안할 경우 아래에 라이브러리는 설치 안해도 됨니다.
-
-node-schedule
-moment
-moment-timezone
+### v12
+config.json을 만들어서 이런 양식으로 해주세요.
 
 ```
+{
+"token" : ""
+}
+```
 
-# 타이머 설정
-```js
-const schedule = require('node-schedule');
-const rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [0, new schedule.Range(0, 4)];
-rule.hour = 00
-rule.minute = 01;
-const k = schedule.scheduleJob(rule, () => {
-    var moment = require('moment'); 
-    require('moment-timezone'); 
-    moment.tz.setDefault("Asia/Seoul"); 
-    var date = moment().format('YYYY-MM-DD HH:mm:ss');
-    console.log("데이터를 수집함니다.");
-    console.log(date);
-    data();
-})
+이런거 보이는데 여기다가 자신이 사용할 봇의 토큰을 넣으면 됨니다.<br>
+준비가 다되었으면 `node app`을 입력해주세요<br><br>
+또 기숙사 식단 정보도 파싱을 해야하기 때문에 다른 창을 이용해서 paser로 들어가서 `node timer` 실행해주세요<br>
+
+### v13
+v13폴더를 들어가서 config template.json을 찾으세요
+
 ```
-현재 저는 node-schedule 타이머를 설정해서 자동으로 실행하게 만들었습니다
-기본값은 월~금 00시01분에 자동으로 실행하게 설정 했는데 요일을 바꾸고 싶으면 
-```js
-rule.dayOfWeek = [0, new schedule.Range(0, 4]; //요일 설정 (월:1 화:2 수:3 목:4 금:5 토:6 일:0)
-rule.hour = 00 //시간
-rule.minute = 01; //분
+{
+    "admim" :"",
+    "clientId": "",
+    "guildId": "",
+    "token" : ""
+    
+}  
 ```
-이부분을 바꾸면 됨니다.
-만약에 자신은 타이머가 필요가 없고 한번만 실행할 경우 위에 내용을 지워버리고
-```
-data();
-```
-을 넣어서 실행을 해주면 바로 실행이 됨니다.
+여기서 보면 `admim,clientId,guildId`이 보이는데 admim은 넣지 않아도 되고 clientId,guildId넣고 `config.json`으로 `다른이름 저장`해주세요
+이런거 보이는데 여기다가 자신이 사용할 봇의 토큰을 넣으면 됨니다.<br>
+준비가 다되었으면 `node main`을 입력해주세요<br><br>
+또 기숙사 식단 정보도 파싱을 해야하기 때문에 다른 창을 이용해서 paser로 들어가서 `node timer` 실행해주세요<br>
+
+## 봇 개조
+제 봇은 개조를 해도됨니다.
+
