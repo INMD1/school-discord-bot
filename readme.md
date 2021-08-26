@@ -10,7 +10,6 @@ https://github.com/INMD1/school-discord-bot/wiki
 
 ## V12
 V12는 `discord.js@12.5.3`기반으로 제작된 봇입니다.<br>
--> 하지만 v13으로 바뀌면서 기반을 살짝 변경중이니 오류가 나면 [issues]("https://github.com/INMD1/school-discord-bot/issues")로 제보 해주시기 바람니다.
 
 ## V13
 V13는 `discord.js@13.1.0`기반으로 제작된 봇입니다.<br><br>
@@ -83,4 +82,5 @@ v13폴더를 들어가서 config template.json을 찾으세요
 
 ## 봇 개조
 제 봇은 개조를 해도됨니다.
+자세한 방법은 각 폴더에 들어가면 리드미가 보입니다. 그걸 보면서 해주세요!
 
