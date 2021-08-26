@@ -33,7 +33,8 @@ module.exports = {
 };
 ```
 ## 여러 기능들
-공식 가이드를 들어가서 참고 하시기 바람니다.<br>
+제가 다 알려드릴수 없기 때문에 공식 가이드를 들어가서 참고 하시기 바람니다.<br>
+하시다가 안되는 거는 issues에 들어가서 문의해주세요!<br>
 https://discordjs.guide/interactions/replying-to-slash-commands.html
 
 
