@@ -4,6 +4,7 @@
 (봇 이미지입니다...)
 
 ⚠ 리드미 작성중입니다.
+
 ## 기능
 위키참조 
 https://github.com/INMD1/school-discord-bot/wiki
@@ -83,4 +84,4 @@ v13폴더를 들어가서 config template.json을 찾으세요
 
 ## 봇 개조
 제 봇은 개조를 해도됨니다.
-
+설명은 각 폴더안에 넣어두겟습니다.

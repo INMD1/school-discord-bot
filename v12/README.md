@@ -2,11 +2,11 @@
 첫번째로 폴더에 들어거면 `commands` 라는 파일이 보임니다.
 ```
 commands
-    ㄴ chart.js
-    ㄴ Conch in magic.js
-    ㄴ image.js
+    ㄴ chart
+    ㄴ foodt.js
+    ㄴ food.js
     ㄴ luck.js
-    ㄴ pubg.js
+    ㄴ schoolfood.js
     ㄴ star.js
     ㄴ Template.js
     ㄴ weather.js
@@ -32,17 +32,8 @@ module.exports = {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     switch (command){
-        case "차트" :
-            client.commands.get('chart').execute(message, args);
-            break;
-        case "프샤" :
-            client.commands.get('image').execute(message, args);
-            break;
         case "날씨" :
             client.commands.get('weather').execute(message, args);
-            break;
-        case "배그동접자" :
-            client.commands.get('pubg').execute(message, args);
             break;
         case "운세" :
             client.commands.get('luck').execute(message, args);
@@ -50,13 +41,20 @@ module.exports = {
         case "별자리" :
             client.commands.get('star').execute(message, args);
             break;
-  
-          
+        case "식단정보" :
+             client.commands.get('food').execute(message, args);
+            break;
+        case "내식" :
+              client.commands.get('food_t').execute(message, args);
+            break;
+        case "차트" :
+              client.commands.get('chart').execute(message, args);
+            break; 
+        case "학식" :
+              client.commands.get('schoolfood').execute(message, args);
+            break;     
     };
-    if(command === '소라고동','소라고동님','마법에 소라고동') {
-      client.commands.get('Conch in magic').execute(message, args);
-     }
-    });  	
+   });  	
 ```
 위코드에 자기가 만들었던 모듈을 넣어주는데 저는 switch문과 if문 둘다 넣었습니다. 왜냐하면 switch문에서 안되는 경우가 있기때문에 만약에 안되면 if문에서 넣어 보시기 바람니다.
 
@@ -68,14 +66,3 @@ swich문에서 모듈을 추가하는 방법은
         breack;
 ```
 이걸 코드에 보이는 것 처럼 아래에 코드를 추가해 주시고 테스트를 진행해주세요.
-
-if문에서 모듈을 추가하는 방법은
-
-```
-        else if(command === '명령어 이름 이건 파일이름을 따르지 않아도 됨니다!') {
-        client.commands.get('파일 이름(파일형식은 저거)').execute(message, args);
-        }
-```
-이걸 코드에 보이는 것 처럼 아래에 코드를 추가해 주시고 테스트를 진행해주세요.
-
-이제 모든 작업을 끝났으면 해달 폴더로 이동해주셔서 `node app.js`를 실행해주세요.
