@@ -1,22 +1,6 @@
 const puppeteer = require('puppeteer');
-data();
-
-const schedule = require('node-schedule');
-const rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [0, new schedule.Range(1)];
-rule.hour = 00
-rule.minute = 10;
-const k = schedule.scheduleJob(rule, () => {
-    var moment = require('moment');
-    require('moment-timezone');
-    moment.tz.setDefault("Asia/Seoul");
-    var date = moment().format('YYYY-MM-DD HH:mm:ss');
-    console.log("데이터를 수집함니다.");
-    console.log(date);
-    data();
-})
-
-function data() {
+module.exports = start
+var start = function() {
     (async () => {
         const browser = await puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox'],

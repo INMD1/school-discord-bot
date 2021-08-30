@@ -9,3 +9,6 @@ node_modules
 !scret template.json
 
 !config template.json
+
+!happy.json
+!hyomin.json

@@ -76,7 +76,6 @@ v13폴더를 들어가서 config template.json을 찾으세요
 여기서 보면 `admim,clientId,guildId`이 보이는데 admim은 넣지 않아도 되고 clientId,guildId넣고 `config.json`으로 `다른이름 저장`해주세요
 이런거 보이는데 여기다가 자신이 사용할 봇의 토큰을 넣으면 됨니다.<br>
 준비가 다되었으면 `node main`을 입력해주세요<br><br>
-또 기숙사 식단 정보도 파싱을 해야하기 때문에 다른 창을 이용해서 paser로 들어가서 `node timer` 실행해주세요<br>
 
 ## 다른 사람들이 내용이 안보인다고 할경우
 이 상황은 제가 답변을 자기만 볼수 있게 설정했기 때문입니다. 그걸 풀려면 config.josn에서 `see: false`를 `ture`로 바꿔주세요.
