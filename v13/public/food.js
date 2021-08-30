@@ -41,7 +41,7 @@ module.exports = {
             .addField('저녁', data[day].dinner, true)
             .addField('저녁 일품', data[day].dinner_s, true)
             .setTimestamp()
-            interaction.reply({embeds: [happy]});         
+            interaction.reply({embeds: [happy],ephemeral: true});         
          }
 	},
 

@@ -40,7 +40,7 @@ module.exports = {
                     .addField('바람', current.winddisplay, true)
                     .addField('습도', `${current.humidity}%`, true)
                     .addField('npm 출처', 'https://www.npmjs.com/package/weather-js', true)
-                    interaction.reply({embeds: [embed]});         
+                    interaction.reply({embeds: [embed], ephemeral: true});         
 
             });
     }

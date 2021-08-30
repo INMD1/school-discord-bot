@@ -39,7 +39,7 @@ module.exports = {
           .addField('수덕전 코너1', '정식')
           .addField('수덕전 3코너', data['수덕전 코너3'][0].menuName)
           .addField('수덕전 예비용', '라면&라면밥') 
-          interaction.reply({embeds: [send0]});        
+          interaction.reply({embeds: [send0], ephemeral: true});        
         }
     });
     }else if(boolean == '정보공학관'){
@@ -56,7 +56,7 @@ module.exports = {
           .addField('정보공학관 1코너', '정식')
           .addField('정보공학관 2코너', data['정보공학관 코너2'][0].menuName)
           .addField('정보공학관 4코너', '라면&라면밥')
-          interaction.reply({embeds: [send1]});         
+          interaction.reply({embeds: [send1], ephemeral: true});         
         }
       });
     }

@@ -59,7 +59,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역1");
                 }
@@ -98,7 +98,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역2");
                 }
@@ -137,7 +137,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역3");
                 }
@@ -176,7 +176,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역4");
                 }
@@ -215,7 +215,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역5");
                 }
@@ -254,7 +254,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역6");
                 }
@@ -293,7 +293,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역7");
                 }
@@ -332,7 +332,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역8");
                 }
@@ -371,7 +371,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역9");
                 }
@@ -410,7 +410,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역10");
                 }
@@ -449,7 +449,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역11");
                 }
@@ -488,7 +488,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed]
+                        embeds: [exampleEmbed] , ephemeral: true
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역12");
                 }
