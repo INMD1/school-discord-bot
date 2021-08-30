@@ -51,7 +51,7 @@ node-schedule
 ### v12
 config.json을 만들어서 이런 양식으로 해주세요.
 
-```
+```json
 {
 "token" : ""
 }
@@ -64,7 +64,7 @@ config.json을 만들어서 이런 양식으로 해주세요.
 ### v13
 v13폴더를 들어가서 config template.json을 찾으세요
 
-```
+```json
 {
     "admim" :"",
     "clientId": "",
