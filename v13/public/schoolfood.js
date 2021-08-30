@@ -27,7 +27,8 @@ module.exports = {
         .addChoice('정보공학관', '정보공학관')),
 	async execute(interaction) {
     const boolean = interaction.options.getString('건물');
-    console.log(boolean);
+    let today = new Date();   
+		console.log('학식이 정상적으로 실행됨 ' + today);
     if(boolean == '수덕전'){
       request(Sudeokjeon,  function(err,res ,body) {
         if(body == '{}'){

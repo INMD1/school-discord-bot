@@ -9,9 +9,6 @@ const data = JSON.parse(jsonFile);
 const jsonFile1 =fs.readFileSync(path.join(__dirname, '../paserfile/hyomin.json'));
 const data1 = JSON.parse(jsonFile1);
 
-
-
-
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('기숙사식단')
@@ -26,7 +23,7 @@ module.exports = {
         const boolean = interaction.options.getString('기숙사');
         let today = new Date();   
         let day = today.getDay()-1 ;
-        console.log("식단정보가 성공적으로 로드함 "+ today);
+        console.log("식단정보이 성공적으로 로드함 "+ today);
         if(day<0){
            const h = new Discord
            .MessageEmbed()

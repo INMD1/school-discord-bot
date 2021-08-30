@@ -15,6 +15,8 @@ module.exports = {
             .setDescription('지역을 입력해주세요')
             .setRequired(true)),
     async execute(interaction) {
+        let today = new Date();   
+		console.log('날씨 정상적으로 실행됨 ' + today);
             weather.find({
                 search: interaction.options.getString('지역'),
                 degreeType: 'C'

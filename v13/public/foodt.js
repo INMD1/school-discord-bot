@@ -18,7 +18,7 @@ module.exports = {
 	async execute(interaction) {
         let today = new Date();   
         let day = today.getDay();
-        console.log("식단정보가 성공적으로 로드함 "+ today);
+        console.log("내일 식단정보 성공적으로 로드함 "+ today);
         if(day<0){
            const h = new Discord
            .MessageEmbed()

@@ -2,7 +2,7 @@ const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const {token} = require('./jsonfile/config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-
+os = require('os');
 
 client.commands = new Collection();
 
@@ -24,7 +24,27 @@ for (const file of Secretsfile) {
 
 client.once('ready', () => {
 	client.user.setActivity("v13 업데이트! /를 입력해주세요.")
-	console.log('Ready!');
+	console.log('-----------------');
+	console.log('  운영체제 정보');
+	console.log('-----------------');
+	console.log('운영체제',os.arch());
+	console.log('운영체제 os', os.type());
+	console.log('운영체제 버전', os.release());
+  
+	console.log('-----------------');
+	console.log("     봇 로그");
+	console.log('-----------------');
+  
+  
+	const moment = require('moment'); 
+	require('moment-timezone'); 
+	moment.tz.setDefault("Asia/Seoul"); 
+	const time = moment().format('YYYY-MM-DD HH:mm:ss');
+	  setTimeout(function(){
+		console.log(time + " 봇을 활성화 했습니다.");
+	   }, 1000);
+	  setTimeout(function(){
+	 }, 4000);
 });
 
 client.on('interactionCreate', async interaction => {

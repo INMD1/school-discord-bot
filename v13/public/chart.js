@@ -1,6 +1,4 @@
-const {
-	SlashCommandBuilder
-} = require('@discordjs/builders');
+const {SlashCommandBuilder} = require('@discordjs/builders');
 const Discord = require('discord.js');
 const {see} = require('../jsonfile/config.json');
 
@@ -11,6 +9,9 @@ module.exports = {
 		 execute(interaction) {
 		var cheerio = require('cheerio');
 		var request = require('request');
+
+		let today = new Date();   
+		console.log('멜론차트이 정상적으로 실행됨 ' + today);
 
 		var url = 'http://www.melon.com/chart/';
 		var title = new Array(),
