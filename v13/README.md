@@ -32,6 +32,14 @@ module.exports = {
 
 };
 ```
+## 커맨드 기능 업데이트
+커맨드 기능 같은 경우 위에 폴더구조를 보면 slash_command_refresh 라는 것이 보이는데 파일을 열면
+```
+slash_command_refresh
+	ㄴpcp.js
+	ㄴscp.js
+```
+가 있습니다. 그래서 pubilc 폴더에 기능을 만들었으면 pcp.js를 실행해주시고 Secret 폴더에 기능을 만들었으면 scp.js를 실행해주세요!
 ## 여러 기능들
 제가 다 알려드릴수 없기 때문에 공식 가이드를 들어가서 참고 하시기 바람니다.<br>
 하시다가 안되는 거는 issues에 들어가서 문의해주세요!<br>
