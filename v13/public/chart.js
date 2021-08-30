@@ -2,6 +2,7 @@ const {
 	SlashCommandBuilder
 } = require('@discordjs/builders');
 const Discord = require('discord.js');
+const {see} = require('../jsonfile/config.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -85,7 +86,7 @@ module.exports = {
 					.addField('8위', title[7] + " - " + artist[7])
 					.addField('9위', title[8] + " - " + artist[8])
 					.addField('10위', title[9] + " - " + artist[9])
-				 interaction.reply({embeds: [send], ephemeral: true});
+				 interaction.reply({embeds: [send], ephemeral: see});
 			}
 		});
 	},

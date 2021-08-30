@@ -8,6 +8,7 @@ const data = JSON.parse(jsonFile);
 
 const jsonFile1 =fs.readFileSync(path.join(__dirname, '../paserfile/hyomin.json'));
 const data1 = JSON.parse(jsonFile1);
+const {see} = require('../jsonfile/config.json');
 
 
 module.exports = {
