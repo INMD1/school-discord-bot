@@ -2,9 +2,13 @@ const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const {token} = require('./jsonfile/config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const timer = require('./paser/timer.js')
+const timer = require('./paserfile/timer')
 os = require('os');
 
+//paser 프로그램 실행
+timer;
+
+//커맨드 명령어들 불러오는 코드
 client.commands = new Collection();
 
 const publicfile = fs.readdirSync('./public').filter(file => file.endsWith('.js'));
@@ -47,28 +51,6 @@ client.once('ready', () => {
 	  setTimeout(function(){
 	 }, 4000);
 	});
-
-	//paser 프로그램 실행
-	timer;
-	let today = new Date();
-	console.log('paser 실행됨 ' + today);
-	//paser 스케줄러
-	const schedule = require('node-schedule');
-	const rule = new schedule.RecurrenceRule();
-	rule.dayOfWeek = [0, new schedule.Range(1)];
-	rule.hour = 00
-	rule.minute = 05;
-	const k = schedule.scheduleJob(rule, () => {
-	    var moment = require('moment');
-	    require('moment-timezone');
-	    moment.tz.setDefault("Asia/Seoul");
-	    var date = moment().format('YYYY-MM-DD HH:mm:ss');
-	    console.log("데이터를 수집함니다.");
-	    console.log(date);
-		timer;
-		console.log('paser 다시 실행됨 ' + today);
-	})
-
 
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;

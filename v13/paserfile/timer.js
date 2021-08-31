@@ -1,6 +1,27 @@
 const puppeteer = require('puppeteer');
-module.exports = start
-var start = function() {
+const schedule = require('node-schedule');
+
+// 처음
+let today = new Date();
+console.log('[SUCCESS] '+'paser 이가 실행됨 ' + today);
+start();
+
+// 반복문
+const rule = new schedule.RecurrenceRule();
+rule.dayOfWeek = [0, new schedule.Range(2)];
+rule.hour = 16
+rule.minute = 30;
+const k = schedule.scheduleJob(rule, () => {
+    var moment = require('moment');
+    require('moment-timezone');
+    moment.tz.setDefault("Asia/Seoul");
+    var date = moment().format('YYYY-MM-DD HH:mm:ss');
+    console.log("데이터를 수집함니다.");
+    console.log(date);
+    start();
+    console.log('paser 다시 실행됨 ' + today);
+})
+function start() {
     (async () => {
         const browser = await puppeteer.launch({
             args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -24,14 +45,14 @@ var start = function() {
        //v13
        const fs = require("fs");
        fs.writeFile(
-           "../paserfile/happy.json",
+           "./paserfile/happy.json",
            JSON.stringify(data, null, 2),
            err => err
                ? console.error("!!Failed writing file", err)
                : console.log("데이터 수집이 끝났습니다. 행복기숙사\n\n")
        );
        fs.writeFile(
-           '../paserfile/hyomin.json',
+           './paserfile/hyomin.json',
            JSON.stringify(data1, null, 2),
            err => err
                ? console.error("!!Failed writing file", err)
@@ -124,7 +145,4 @@ var start = function() {
 
         return Promise.resolve(data);
     }
-
 }
-
-
