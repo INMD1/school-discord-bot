@@ -27,6 +27,7 @@ for (const file of Secretsfile) {
 	client.commands.set(command.data.name, command);
 }
 
+// 콘솔에 나타날 로그들
 client.once('ready', () => {
 	client.user.setActivity("v13 업데이트! /를 입력해주세요.")
 	console.log('-----------------');
@@ -66,6 +67,7 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
+
 
 
 
