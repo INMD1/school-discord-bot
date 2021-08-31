@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
-const {token} = require('./jsonfile/config.json');
+const {token, autocheck} = require('./jsonfile/config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const timer = require('./paserfile/timer')
 os = require('os');
@@ -67,9 +67,6 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
 });
-
-
-
 
 client.login(token);
 
