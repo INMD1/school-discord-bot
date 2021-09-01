@@ -6,8 +6,6 @@ const fs = require('fs');
 const Secretss = [];
 const Secrets = fs.readdirSync('../Secret').filter(file => file.endsWith('.js'));
 
-const publics = [];
-const commandFiles = fs.readdirSync('../public').filter(file => file.endsWith('.js'));
 
 for (const file of Secrets) {
 	//비공개 명령어

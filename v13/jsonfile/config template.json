@@ -1,5 +1,9 @@
 {
 "admim" :"",
-"token" : ""
+"token" : "",
+"guildId":"",
+"clientId": "",
+"autocheck":"",
+"see": true
 
 }
