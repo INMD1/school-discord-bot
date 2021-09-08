@@ -55,7 +55,8 @@ module.exports = {
               .addField('저녁', data1[day].hdinner, true)
               .setTimestamp()
               
-              interaction.reply({embeds: [hyomin],ephemeral: see});             }
+              interaction.reply({embeds: [hyomin],ephemeral: see});             
+            }
          }
 	},
 
