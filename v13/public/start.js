@@ -6,7 +6,7 @@ const {see} = require('../jsonfile/config.json');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('별자리')
+        .setName('star')
         .setDescription('별자리를 알려줘요!')
         .addStringOption(option =>
             option.setName('선택')

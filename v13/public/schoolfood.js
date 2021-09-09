@@ -17,7 +17,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('학식')
+		.setName('scholarship')
 		.setDescription('수덕전 또는 정보공학관 식단을 보여줌니다!')
     .addStringOption(option =>
       option.setName('건물')
