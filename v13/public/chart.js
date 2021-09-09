@@ -4,7 +4,7 @@ const {see} = require('../jsonfile/config.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('차트')
+		.setName('music_chart')
 		.setDescription('멜론 뮤직 차트를 알려줌니다.'),
 		 execute(interaction) {
 		var cheerio = require('cheerio');

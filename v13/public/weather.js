@@ -8,7 +8,7 @@ const {
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('날씨')
+        .setName('weather')
         .setDescription('지역을 입력하면 날씨를 알려줌니다.')
         .addStringOption(option =>
             option.setName('지역')

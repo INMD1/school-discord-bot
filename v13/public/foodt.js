@@ -13,12 +13,11 @@ const {see} = require('../jsonfile/config.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('내일_기숙사식단')
+		.setName('t_dorm')
 		.setDescription('오늘의 기숙사 식단을 보내드림니다.')
     .addStringOption(option =>
       option.setName('기숙사')
         .setDescription('기숙사를 선택해 주세요.')
-        .setRequired(true)
         .addChoice('효민', 'hyomin')
         .addChoice('행긱', 'happy')),
 	async execute(interaction) {
