@@ -33,7 +33,7 @@ module.exports = {
       request(Sudeokjeon,  function(err,res ,body) {
         const data = JSON.parse(body);
         if(body == '{}'){
-          interaction.reply({embeds: [error]});         
+          interaction.reply({embeds: [error], ephemeral: see});         
           console.log('수덕전:err')
         }else{
           if (typeof data['수덕전 코너2'] !== 'undefined' && data['수덕전 코너2'] !== null){
@@ -59,7 +59,7 @@ module.exports = {
       request(information, function(err,res ,body) {
         const data = JSON.parse(body);
         if(body == '{}'){
-          interaction.reply({embeds: [error1]});         
+          interaction.reply({embeds: [error1], ephemeral: see});         
           console.log('정보공학관:err')
         }else{
           if (typeof data['정보공학관 코너2'] !== 'undefined' && data['정보공학관 코너2'] !== null){
