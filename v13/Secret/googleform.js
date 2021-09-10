@@ -13,7 +13,7 @@ const puppeteer = require('puppeteer');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('잔류신청')
-		.setDescription('DOD동아리 야간잔류 신청을 디스코드에서 가능해요!')
+		.setDescription('(시스템 점검중)DOD동아리 야간잔류 신청을 디스코드에서 가능해요!')
 		.addUserOption(option => 
 			option.setName('target')
 			.setDescription('Select a user')),
