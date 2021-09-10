@@ -11,12 +11,11 @@ const data1 = JSON.parse(jsonFile1);
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('기숙사식단')
+		.setName('dorm')
 		.setDescription('오늘의 기숙사 식단을 보내드림니다.')
     .addStringOption(option =>
       option.setName('기숙사')
         .setDescription('기숙사를 선택해 주세요.')
-        .setRequired(true)
         .addChoice('효민', 'hyomin')
         .addChoice('행긱', 'happy')),
 	async execute(interaction) {
@@ -55,7 +54,8 @@ module.exports = {
               .addField('저녁', data1[day].hdinner, true)
               .setTimestamp()
               
-              interaction.reply({embeds: [hyomin],ephemeral: see});             }
+              interaction.reply({embeds: [hyomin],ephemeral: see});             
+            }
          }
 	},
 

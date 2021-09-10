@@ -2,7 +2,7 @@ const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const {token, autocheck} = require('./jsonfile/config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-//const timer = require('./paserfile/timer')
+const timer = require('./paserfile/timer')
 os = require('os');
 
 //커맨드 명령어들 불러오는 코드
