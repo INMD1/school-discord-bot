@@ -37,7 +37,7 @@ module.exports = {
             if(boolean == 'happy'){
               const happy = new Discord.MessageEmbed()
               .setColor('#0099ff')
-              .setTitle("내일 행복기숙사 식사 정보")
+              .setTitle("행복기숙사 식사 정보")
               .addField('아침 일품', data[day].Breakfast_s, true)
               .addField('점심', data[day].lunch, true)
               .addField('점심 일품', data[day].lunch_s, true)
@@ -48,7 +48,7 @@ module.exports = {
             }else if(boolean == 'hyomin'){
               const hyomin = new Discord.MessageEmbed()
               .setColor('#0099ff')
-              .setTitle("내일 효민기숙사 식사 정보 ")
+              .setTitle("효민기숙사 식사 정보낙지+새우")
               .addField('아침', data1[day].hBreakfast, true)
               .addField('점심', data1[day].hlunch, true)
               .addField('저녁', data1[day].hdinner, true)
