@@ -12,6 +12,7 @@ const {see} = require('../jsonfile/config.json');
 
 
 module.exports = {
+  
 	data: new SlashCommandBuilder()
 		.setName('t_dorm')
 		.setDescription('오늘의 기숙사 식단을 보내드림니다.')
@@ -23,6 +24,8 @@ module.exports = {
 	async execute(interaction) {
         let today = new Date();   
         let day = today.getDay();
+        const boolean = interaction.options.getString('기숙사');
+
         console.log("내일 식단정보 성공적으로 로드함 "+ today);
         if(day<0){
            const h = new Discord
