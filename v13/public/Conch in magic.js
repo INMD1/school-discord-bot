@@ -15,6 +15,7 @@ module.exports = {
         .setRequired(true)
     ),
   async execute(interaction) {
+    const string = interaction.options.getString('ask');
     var ask = [
       "안돼",
       "물론",
@@ -36,7 +37,8 @@ module.exports = {
     const send = new Discord.MessageEmbed()
       .setColor("#DEB887")
       .setTitle("마법에 소라고동")
-      .setDescription(result)
+      .addFields({ name: '질문 내용', value: string })
+      .addFields({ name: '답변 내용', value: result })
       .setTimestamp();
       interaction.reply({embeds: [send]});
   },
