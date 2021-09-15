@@ -1,15 +1,5 @@
 const  Discord = require("discord.js"); const request = require("request")
 
-// 시간로드
-
-const today = new Date();
-const year = today.getFullYear();
-const month = ('0' + (today.getMonth() + 1)).slice(-2);
-const day = ('0' + today.getDate()).slice(-2);
-
-// 주소
-const Sudeokjeon = "https://smart.deu.ac.kr/m/sel_dfood?date="+year+month+day+"&gubun1=1&gubun2=1"
-const information = "https://smart.deu.ac.kr/m/sel_dfood?date="+year+month+day+"&gubun1=1&gubun2=2"
 
 const {see} = require('../jsonfile/config.json');
 
@@ -26,6 +16,17 @@ module.exports = {
         .addChoice('수덕전', '수덕전')
         .addChoice('정보공학관', '정보공학관')),
 	async execute(interaction) {
+    // 시간로드
+
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = ('0' + (today.getMonth() + 1)).slice(-2);
+  const day = ('0' + today.getDate()).slice(-2);
+
+  // 주소
+  const Sudeokjeon = "https://smart.deu.ac.kr/m/sel_dfood?date="+year+month+day+"&gubun1=1&gubun2=1"
+  const information = "https://smart.deu.ac.kr/m/sel_dfood?date="+year+month+day+"&gubun1=1&gubun2=2"
+  
     const boolean = interaction.options.getString('건물');
     let today = new Date();   
 		console.log('학식이 정상적으로 실행됨 ' + today);
