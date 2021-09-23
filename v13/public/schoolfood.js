@@ -27,8 +27,7 @@ module.exports = {
   const Sudeokjeon = "https://smart.deu.ac.kr/m/sel_dfood?date="+year+month+day+"&gubun1=1&gubun2=1"
   const information = "https://smart.deu.ac.kr/m/sel_dfood?date="+year+month+day+"&gubun1=1&gubun2=2"
   
-    const boolean = interaction.options.getString('건물');
-    let today = new Date();   
+    const boolean = interaction.options.getString('건물'); 
 		console.log('학식이 정상적으로 실행됨 ' + today);
     if(boolean == '수덕전'){
       request(Sudeokjeon,  function(err,res ,body) {
