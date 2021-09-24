@@ -15,3 +15,7 @@ node_modules
 !hyomin.json
 
 testfile
+
+!package-lock.json
+
+!package.json
