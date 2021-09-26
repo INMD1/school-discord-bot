@@ -1,6 +1,5 @@
-const  Discord = require("discord.js"); const request = require("request")
-
-
+const  Discord = require("discord.js"); 
+const request = require("request")
 const {see} = require('../jsonfile/config.json');
 
 const { SlashCommandBuilder } = require('@discordjs/builders');
