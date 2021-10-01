@@ -2,7 +2,6 @@ const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const {token, autocheck} = require('./jsonfile/config.json');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const timer = require('./paserfile/timer')
 os = require('os');
 
 //커맨드 명령어들 불러오는 코드
@@ -26,7 +25,7 @@ for (const file of Secretsfile) {
 
 // 콘솔에 나타날 로그들
 client.once('ready', () => {
-	client.user.setActivity("v13 업데이트! /를 입력해주세요.")
+	client.user.setActivity("/를 입력해주세요.")
 	console.log('-----------------');
 	console.log('  운영체제 정보');
 	console.log('-----------------');
