@@ -3,6 +3,8 @@ const {
 } = require('@discordjs/builders');
 const Discord = require("discord.js");
 const {see} = require('../jsonfile/config.json');
+const cheerio = require('cheerio');
+const request = require('request');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -27,30 +29,27 @@ module.exports = {
     async execute(interaction) {
         const gettext = interaction.options.getString('선택');
         if (gettext === '물병자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EB%AC%BC%EB%B3%91%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EB%AC%BC%EB%B3%91%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -60,36 +59,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역1");
                 }
             });
         } else if (gettext === '물고기자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EB%AC%BC%EA%B3%A0%EA%B8%B0%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EB%AC%BC%EA%B3%A0%EA%B8%B0%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -99,36 +95,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역2");
                 }
             });
         } else if (gettext === '양자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%96%91%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%96%91%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -138,36 +131,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역3");
                 }
             });
         } else if (gettext === '황소자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%ED%99%A9%EC%86%8C%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%ED%99%A9%EC%86%8C%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -177,36 +167,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역4");
                 }
             });
         } else if (gettext === '쌍둥이자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%8C%8D%EB%91%A5%EC%9D%B4%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%8C%8D%EB%91%A5%EC%9D%B4%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -216,36 +203,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역5");
                 }
             });
         } else if (gettext === '게자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EA%B2%8C%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EA%B2%8C%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -255,36 +239,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역6");
                 }
             });
         } else if (gettext === '사자자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%82%AC%EC%9E%90%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%82%AC%EC%9E%90%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -294,36 +275,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역7");
                 }
             });
         } else if (gettext === '처녀자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%B2%98%EB%85%80%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%B2%98%EB%85%80%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -333,36 +311,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역8");
                 }
             });
         } else if (gettext === '천창자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%B2%9C%EC%B9%AD%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%B2%9C%EC%B9%AD%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -372,36 +347,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역9");
                 }
             });
         } else if (gettext === '전갈자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%A0%84%EA%B0%88%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%A0%84%EA%B0%88%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -411,36 +383,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역10");
                 }
             });
         } else if (gettext === '사수자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%82%AC%EC%88%98%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%82%AC%EC%88%98%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -450,36 +419,33 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역11");
                 }
             });
         } else if (gettext === '염소자리') {
-            var cheerio = require('cheerio');
-            var request = require('request');
-
-            var url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%97%BC%EC%86%8C%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
-            var data = new Array(),
+            const url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&query=%EC%97%BC%EC%86%8C%EC%9E%90%EB%A6%AC%20%EC%9A%B4%EC%84%B8';
+            let data = new Array(),
                 up_date,
                 up_time;
 
             request(url, function (error, response, html) {
                 if (!error) {
-                    var $ = cheerio.load(html);
+                    const $ = cheerio.load(html);
 
 
                     $('#yearFortune > div > div.detail.detail2 > h6 > ul > li.first_lst > a').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         title1 = data_info_text;
                     })
                     $('#yearFortune > div > div.detail.detail2 > p:nth-child(3)').each(function () {
-                        var data_info = $(this);
-                        var data_info_text = data_info.text();
+                        const data_info = $(this);
+                        const data_info_text = data_info.text();
                         text1 = data_info_text;
                     });
-                    const exampleEmbed = new Discord.MessageEmbed()
+                    const send = new Discord.MessageEmbed()
                         .setColor('#01DF01')
                         .setTitle(title1)
                         .setURL(url)
@@ -489,7 +455,7 @@ module.exports = {
                         .setTimestamp()
                         .setFooter('Ubuntu 20.04 LTS', 'https://avatars1.githubusercontent.com/u/41885157?s=40&u=285801175efe4af1c2e21b821160fdcaf996b898&v=4');
                     interaction.reply({
-                        embeds: [exampleEmbed] , ephemeral: see
+                        embeds: [send] , ephemeral: see
                     });
                     console.log("별자리(이)가 성공적으로 로드가 됨 구역12");
                 }
