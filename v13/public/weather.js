@@ -28,8 +28,8 @@ module.exports = {
                     return;
                 }
 
-                var current = result[0].current;
-                var location = result[0].location;
+                const current = result[0].current;
+                const location = result[0].location;
 
                 const embed = new Discord.MessageEmbed()
                     .setDescription(`**${current.skytext}**`)

@@ -7,39 +7,39 @@ module.exports = {
 		.setName('music_chart')
 		.setDescription('멜론 뮤직 차트를 알려줌니다.'),
 		 execute(interaction) {
-		var cheerio = require('cheerio');
-		var request = require('request');
+		let cheerio = require('cheerio');
+		let request = require('request');
 
 		let today = new Date();   
 		console.log('멜론차트이 정상적으로 실행됨 ' + today);
 
-		var url = 'http://www.melon.com/chart/';
-		var title = new Array(),
+		let url = 'http://www.melon.com/chart/';
+		let title = new Array(),
 			artist = new Array(),
 			up_date,
 			up_time;
-		var rank = 10; //10위까지 확인
+			let rank = 10; //10위까지 확인
 
 
 		request(url, function (error, response, html) {
 			if (!error) {
-				var $ = cheerio.load(html);
+				let $ = cheerio.load(html);
 
 				// 곡명 파싱
-				for (var i = 0; i < rank; i++) {
+				for (let i = 0; i < rank; i++) {
 					$('.ellipsis.rank01 > span > a').each(function () {
-						var title_info = $(this);
-						var title_info_text = title_info.text();
+						let title_info = $(this);
+						let title_info_text = title_info.text();
 						title[i] = title_info_text;
 						i++;
 					})
 				}
 
 				// 아티스트명 파싱
-				for (var i = 0; i < rank; i++) {
+				for (let i = 0; i < rank; i++) {
 					$('.checkEllipsis').each(function () {
-						var artist_info = $(this);
-						var artist_info_text = artist_info.text();
+						let artist_info = $(this);
+						let artist_info_text = artist_info.text();
 						artist[i] = artist_info_text;
 						i++;
 					})
@@ -47,24 +47,24 @@ module.exports = {
 
 				// 업데이트 날짜
 				$('.year').each(function () {
-					var date_info = $(this);
-					var date_info_text = date_info.text();
+					let date_info = $(this);
+					let date_info_text = date_info.text();
 					up_date = date_info_text;
 				})
 
 				// 업데이트 시간
 				$('.hhmm > span').each(function () {
-					var time_info = $(this);
-					var time_info_text = time_info.text();
+					let time_info = $(this);
+					let time_info_text = time_info.text();
 					up_time = time_info_text;
 				})
 
 				//xxxx년 xx월 xx일 오후/오전 xx시 format
-				var up_date_arr = new Array();
-				var up_date_arr = up_date.split('.');
-				var up_time_arr = new Array();
-				var up_time_arr = up_time.split(':');
-				var newtime;
+				let up_date_arr = new Array();
+				let up_date_arr = up_date.split('.');
+				let up_time_arr = new Array();
+				let up_time_arr = up_time.split(':');
+				let newtime;
 
 				// 오후 오전 삽입
 				if (up_time_arr[0] > 12) {

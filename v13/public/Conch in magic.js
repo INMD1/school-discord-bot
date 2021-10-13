@@ -16,7 +16,7 @@ module.exports = {
     ),
   async execute(interaction) {
     const string = interaction.options.getString('ask');
-    var ask = [
+    const ask = [
       "안돼",
       "물론",
       "넌 왜그러니 나한데",
@@ -31,8 +31,8 @@ module.exports = {
       "돌아가",
       "일이나 하세요^^",
     ];
-    var askuNum = Math.floor(Math.random() * 13);
-    var result = ask[askuNum];
+    let askuNum = Math.floor(Math.random() * 13);
+    let result = ask[askuNum];
     console.log("정상적으로 답변을 보냄(소라고동 명렁어 부분)");
     const send = new Discord.MessageEmbed()
       .setColor("#DEB887")
