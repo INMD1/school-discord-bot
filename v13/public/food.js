@@ -3,11 +3,11 @@ const Discord = require("discord.js"); //안쓸떄는 지워도 되요 근데 �
 const path = require('path');
 const fs = require('fs');
 const {see} = require('../jsonfile/config.json');
-const jsonFile = fs.readFileSync(path.join(__dirname, '../paserfile/happy.json'));
-const data = JSON.parse(jsonFile);
+let jsonFile = fs.readFileSync(path.join(__dirname, '../paserfile/happy.json'));
+let data = JSON.parse(jsonFile);
 
-const jsonFile1 =fs.readFileSync(path.join(__dirname, '../paserfile/hyomin.json'));
-const data1 = JSON.parse(jsonFile1);
+let jsonFile1 =fs.readFileSync(path.join(__dirname, '../paserfile/hyomin.json'));
+let data1 = JSON.parse(jsonFile1);
 
 module.exports = {
 	data: new SlashCommandBuilder()

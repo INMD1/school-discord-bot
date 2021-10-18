@@ -9,7 +9,7 @@ start();
 // 반복문
 const rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(2)];
-rule.hour = 16
+rule.hour = 00
 rule.minute = 30;
 const k = schedule.scheduleJob(rule, () => {
     var moment = require('moment');
