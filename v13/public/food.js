@@ -3,11 +3,6 @@ const Discord = require("discord.js"); //안쓸떄는 지워도 되요 근데 �
 const path = require('path');
 const fs = require('fs');
 const {see} = require('../jsonfile/config.json');
-let jsonFile = fs.readFileSync(path.join(__dirname, '../paserfile/happy.json'));
-let data = JSON.parse(jsonFile);
-
-let jsonFile1 =fs.readFileSync(path.join(__dirname, '../paserfile/hyomin.json'));
-let data1 = JSON.parse(jsonFile1);
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -19,6 +14,11 @@ module.exports = {
         .addChoice('효민', 'hyomin')
         .addChoice('행긱', 'happy')),
 	async execute(interaction) {
+    let jsonFile = fs.readFileSync(path.join(__dirname, '../paserfile/happy.json'));
+    let data = JSON.parse(jsonFile);
+
+    let jsonFile1 =fs.readFileSync(path.join(__dirname, '../paserfile/hyomin.json'));
+    let data1 = JSON.parse(jsonFile1);  
         const boolean = interaction.options.getString('기숙사');
         let today = new Date();   
         let day = today.getDay()-1 ;
