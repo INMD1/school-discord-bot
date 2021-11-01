@@ -40,6 +40,6 @@ module.exports = {
       .addFields({ name: '질문 내용', value: string })
       .addFields({ name: '답변 내용', value: result })
       .setTimestamp();
-      interaction.reply({embeds: [send]});
+    interaction.reply({ embeds: [send] });
   },
 };

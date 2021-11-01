@@ -1,16 +1,16 @@
-const {SlashCommandBuilder} = require('@discordjs/builders');
+const { SlashCommandBuilder } = require('@discordjs/builders');
 const Discord = require('discord.js');
-const {see} = require('../jsonfile/config.json');
+const { see } = require('../jsonfile/config.json');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('music_chart')
 		.setDescription('멜론 뮤직 차트를 알려줌니다.'),
-		 execute(interaction) {
+	execute(interaction) {
 		var cheerio = require('cheerio');
 		var request = require('request');
 
-		var today = new Date();   
+		var today = new Date();
 		console.log('멜론차트이 정상적으로 실행됨 ' + today);
 
 		var url = 'http://www.melon.com/chart/';
@@ -18,7 +18,7 @@ module.exports = {
 			artist = new Array(),
 			up_date,
 			up_time;
-			var rank = 10; //10위까지 확인
+		var rank = 10; //10위까지 확인
 
 
 		request(url, function (error, response, html) {
@@ -87,7 +87,7 @@ module.exports = {
 					.addField('8위', title[7] + " - " + artist[7])
 					.addField('9위', title[8] + " - " + artist[8])
 					.addField('10위', title[9] + " - " + artist[9])
-				 interaction.reply({embeds: [send], ephemeral: see});
+				interaction.reply({ embeds: [send], ephemeral: see });
 			}
 		});
 	},
