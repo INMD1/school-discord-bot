@@ -45,14 +45,14 @@ function start() {
        //v13
        const fs = require("fs");
        fs.writeFile(
-           "/home/inmd/github/lee/v13/paserfile/happy.json",
+           "/home/inmd/github/school-discord-bot/v13/paserfile/happy.json",
            JSON.stringify(data, null, 2),
            err => err
                ? console.error("!!Failed writing file", err)
                : console.log("데이터 수집이 끝났습니다. 행복기숙사\n\n")
        );
        fs.writeFile(
-           '/home/inmd/github/lee/v13/paserfile/hyomin.json',
+           '/home/inmd/github/school-discord-bot/v13/paserfile/hyomin.json',
            JSON.stringify(data1, null, 2),
            err => err
                ? console.error("!!Failed writing file", err)

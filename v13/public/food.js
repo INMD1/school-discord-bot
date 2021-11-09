@@ -14,10 +14,10 @@ module.exports = {
         .addChoice('효민', 'hyomin')
         .addChoice('행긱', 'happy')),
   async execute(interaction) {
-    let jsonFile = fs.readFileSync(path.join(__dirname, '../paserfile/happy.json'));
+    let jsonFile = fs.readFileSync('/home/inmd/github/school-discord-bot/v13/paserfile/happy.json');
     let data = JSON.parse(jsonFile);
 
-    let jsonFile1 = fs.readFileSync(path.join(__dirname, '../paserfile/hyomin.json'));
+    let jsonFile1 = fs.readFileSync('/home/inmd/github/school-discord-bot/v13/paserfile/hyomin.json');
     let data1 = JSON.parse(jsonFile1);
     const boolean = interaction.options.getString('기숙사');
     let today = new Date();
