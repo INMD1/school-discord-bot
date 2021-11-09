@@ -13,6 +13,7 @@ module.exports = {
         .setDescription('기숙사를 선택해 주세요.')
         .addChoice('효민', 'hyomin')
         .addChoice('행긱', 'happy')),
+        
   async execute(interaction) {
     let jsonFile = fs.readFileSync('/home/inmd/github/school-discord-bot/v13/paserfile/happy.json');
     let data = JSON.parse(jsonFile);
