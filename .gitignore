@@ -1,5 +1,9 @@
 node_modules
 
+happy.json
+
+hyomin.json
+
 *.json
 
 *.png
@@ -9,10 +13,6 @@ node_modules
 !scret template.json
 
 !config template.json
-
-!happy.json
-
-!hyomin.json
 
 testfile
 

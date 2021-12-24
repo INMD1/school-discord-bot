@@ -35,7 +35,7 @@ module.exports = {
         const happy = new Discord.MessageEmbed()
           .setColor('#0099ff')
           .setTitle("행복기숙사 식사 정보")
-          .addField('아침 일품', data[day].Breakfast_s, true)
+          .addField('아침 일품', data[day].Breakfast, true)
           .addField('점심', data[day].lunch, true)
           .addField('점심 일품', data[day].lunch_s, true)
           .addField('저녁', data[day].dinner, true)
